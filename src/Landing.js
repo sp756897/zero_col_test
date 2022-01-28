@@ -97,13 +97,13 @@ class Landing extends Component {
         var allLoans = this.state.loans.map((val, key) => (
             <div class="row" key={key}>
                 <div class="col s12 m9">
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content white-text">
+                    <div class="card #ff1744 red accent-3">
+                        <div class="card-content white-text" style={{ fontFamily: "caudex" }}>
                             <span class="card-title">Loan number {val.loan}</span>
-                            <p style={{ fontsize: "28px" }}>Principal: {val.principal} </p>
-                            <p>Collateral: {val.collateral} </p>
-                            <p>Interest: {val.interest} </p>
-                            <p>Total Interest: {val.total_interest} </p>
+                            <p style={{ fontSize: "18px" }}>Principal: {val.principal} </p>
+                            <p style={{ fontSize: "18px" }}>Collateral: {val.collateral} </p>
+                            <p style={{ fontSize: "18px" }}>Interest: {val.interest} </p>
+                            <p style={{ fontSize: "18px" }}>Total Interest: {val.total_interest} </p>
                         </div>
                     </div>
                 </div>
@@ -113,13 +113,13 @@ class Landing extends Component {
         var allloans2 = this.state.defaultLoan.map((val, key) => (
             <div class="row" key={key}>
                 <div class="col s12 m9">
-                    <div class="card blue-grey darken-1">
-                        <div class="card-content white-text">
+                    <div class="card #d500f9 purple accent-3">
+                        <div class="card-content white-text" style={{ fontFamily: "caudex" }}>
                             <span class="card-title">Loan number {val.loan}</span>
-                            <p style={{ fontsize: "28px" }}>Principal: {val.principal} </p>
-                            <p>Collateral: {val.collateral} </p>
-                            <p>Interest: {val.interest} </p>
-                            <p>Total Interest: {val.total_interest} </p>
+                            <p style={{ fontSize: "18px" }}>Principal: {val.principal} </p>
+                            <p style={{ fontSize: "18px" }}>Collateral: {val.collateral} </p>
+                            <p style={{ fontSize: "18px" }}>Interest: {val.interest} </p>
+                            <p style={{ fontSize: "18px" }}>Total Interest: {val.total_interest} </p>
                         </div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@ class Landing extends Component {
                             <div class="col s12">
                                 <div class="row center-align" >
                                     <div class="col">
-                                        <div class="card pink accent-3 center-align">
+                                        <div class="card #ff1744 red accent-3 center-align">
                                             <div class="card-content white-text">
                                                 <span class="card-title">Loans Until Zero Collateral</span>
                                                 <div className="">
@@ -150,7 +150,7 @@ class Landing extends Component {
                                                                         onChange={this.onChange}
                                                                         value={this.state.principal}
                                                                         id="principal"
-                                                                        type="text"
+                                                                        type="number"
                                                                     />
                                                                     <label htmlFor="principal">Principal</label>
                                                                 </div>
@@ -191,7 +191,7 @@ class Landing extends Component {
                             </div>
                         </div>
                         <div class="valign-wrapper">
-                            <span style={{ fontSize: "21px" }}>
+                            <span style={{ fontSize: "21px", paddingBottom: "15px" }}>
                                 {this.state.total_interest ?
                                     "Total Net Profit: " + this.state.total_interest : ""}
                             </span>
