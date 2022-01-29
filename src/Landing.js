@@ -43,12 +43,19 @@ class Landing extends Component {
             loans.push({ "loan": i, "principal": principal, "collateral": collateral, "interest": interest, "total_interest": total_interest })
             console.log("Repaying Loan: ")
             console.log("Interest: ", interest, "Total_Interest: ", total_interest)
-
+            console.log("i: ", i)
+            if (i > def) {
+                console.log("p: ", principal, "c: ", collateral, "ti: ", (total_interest - interest))
+                topro = ((total_interest - interest) + collateral) - principal
+                break
+            }
             principal = principal + (interest / 3)
             collateral = collateral - ((interest + previous_interest) / 3)
             previous_interest = interest
+            console.log("break: ")
+
         }
-        topro = (total_interest + collateral) - principal
+
 
         this.setState({
             defaultLoan: loans,
@@ -163,8 +170,6 @@ class Landing extends Component {
                                                                     />
                                                                     <label htmlFor="rate">Rate</label>
                                                                 </div>
-
-
                                                                 <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                                                                     <button
                                                                         style={{
